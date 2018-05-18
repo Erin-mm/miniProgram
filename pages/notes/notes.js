@@ -13,7 +13,8 @@ Page({
       { name: 'sad', url: '../../sources/images/sad.png' },
       { name: 'shocked', url: '../../sources/images/shocked.png' },
       { name: 'smile', url: '../../sources/images/smile.png' },
-    ]
+    ],
+    animationData: {}
   },
 
   /**
@@ -22,6 +23,7 @@ Page({
   onLoad: function (options) {
 
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -70,5 +72,20 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  emojiShow: function () {
+    var animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'ease',
+    })
+
+    this.animation = animation
+    animation.translateY(0).opacity(1).step()
+    this.setData({
+      animationData: animation.export()
+    })
+  },
+  chooseEmoji: function () {
+    console.log(222);
   }
 })

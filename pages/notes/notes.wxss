@@ -61,12 +61,14 @@ page {
 }
 
 .emoji-box {
-  position: absolute;
+  position: fixed;
   bottom: 80px;
   left: 0;
   right: 0;
   box-sizing: border-box;
   padding: 10px;
+  transform: translateY(50%);
+  opacity: 0;
 }
 
 .emoji-box .wrapper {
