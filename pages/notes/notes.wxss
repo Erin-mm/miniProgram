@@ -1,0 +1,106 @@
+/* pages/notes/notes.wxss */
+
+page {
+  height: 100%;
+}
+
+.container {
+  padding: 10px 10px 0 10px;
+  min-height: 100%;
+}
+
+.content-box {
+  display: flex;
+  flex-grow: 1;
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 76px;
+}
+
+.content-dtl {
+  flex-grow: 1;
+  color: #666;
+  line-height: 20px;
+  height: auto;
+}
+
+.button-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  box-sizing: border-box;
+  padding: 10px;
+  background: #efefef;
+}
+
+.button-save {
+  flex: 12;
+}
+
+.button-save button {
+  background-color: #7cd8bd;
+}
+
+.button-save button:active {
+  background-color: #9be9d9;
+}
+
+.button-emoji {
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.emoji-box {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.emoji-box .wrapper {
+  position: relative;
+  display: flex;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.emoji-box .wrapper::before {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  right: 16px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 14px solid #ddd;
+  opacity: 0.4;
+}
+.emoji-box .wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right:6px solid transparent;
+  border-top: 10px solid #fff;
+}
+
+.emoji-item {
+  flex: 1;
+}

@@ -1,5 +1,5 @@
-<!--index.wxml-->
-<view class="container">
+<!--pages/statistics/statistics.wxml-->
+<view class='container'>
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -7,20 +7,12 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class='chart'>
+  <view class='chart-wrapper'>
   </view>
-  <view>
-    <view>{{ msg }}</view>
-    <button bindtap="clickMe">点击我</button>
   </view>
-  <view>
-    <button bindtap="chooseImg">获取本地图片</button>
-  </view>
-  <view>
-  <button bindtap="goToStatistics">统计页</button>
-  </view>
-    <view>
-  <button bindtap="goToNotes">记录页</button>
+  <view class='suggest'>
+  <text class='suggest-tip'>Tips:</text>
+  <text class='suggest-txt'>You're not in a good mood this week, no forget to keep smile next week</text>
   </view>
 </view>
