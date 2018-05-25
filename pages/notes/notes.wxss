@@ -14,7 +14,8 @@ page {
   flex-grow: 1;
   box-sizing: border-box;
   width: 100%;
-  padding-bottom: 76px;
+  padding-bottom: 140px;
+  overflow: hidden;
 }
 
 .content-dtl {
@@ -36,7 +37,7 @@ page {
 }
 
 .button-save {
-  flex: 12;
+  flex: 1;
 }
 
 .button-save button {
@@ -46,6 +47,18 @@ page {
 .button-save button:active {
   background-color: #9be9d9;
 }
+
+.emoji-box {
+  display: flex;
+  position: absolute;
+  bottom: 66px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
 
 .button-emoji {
   display: flex;
@@ -60,47 +73,54 @@ page {
   height: 32px;
 }
 
-.emoji-box {
-  position: fixed;
-  bottom: 80px;
-  left: 0;
-  right: 0;
-  box-sizing: border-box;
-  padding: 10px;
-  transform: translateY(50%);
-  opacity: 0;
-}
-
 .emoji-box .wrapper {
+  flex: 13;
   position: relative;
+  padding-left: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.emoji-box .wrapper .emoji-txt{
+  position: absolute;
+  top: 50%;
+  transform: translate(0,-60%);
+  color: #ccc;
+}
+.emoji-box .wrapper .inner {
   display: flex;
-  padding: 10px;
   border-radius: 6px;
+  width: 100%;
+  padding: 10px;
   box-shadow: 0 0 10px #ccc;
+  box-sizing: border-box;
+  transform: translateX(-50%) scale(0);
+  z-index: 100;
+  background: #fff;
 }
 
-.emoji-box .wrapper::before {
+.emoji-box .wrapper .inner::before {
   content: '';
   position: absolute;
-  bottom: -14px;
-  right: 16px;
+  top: 17px;
+  left: -12px;
   width: 0;
   height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 14px solid #ddd;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 12px solid #ccc;
   opacity: 0.4;
 }
-.emoji-box .wrapper::after {
+
+.emoji-box .wrapper .inner::after {
   content: '';
   position: absolute;
-  bottom: -10px;
-  right: 20px;
+  top: 19px;
+  left: -10px;
   width: 0;
   height: 0;
-  border-left: 6px solid transparent;
-  border-right:6px solid transparent;
-  border-top: 10px solid #fff;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 10px solid #fff;
 }
 
 .emoji-item {

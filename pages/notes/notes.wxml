@@ -1,21 +1,26 @@
 <!--pages/notes/notes.wxml-->
 <view class='container'>
   <view class='content-box'>
-    <textarea auto-height="" class='content-dtl' placeholder='note taking…'></textarea>
+    <textarea auto-height="" maxlength="-1" class='content-dtl' placeholder='note taking…'></textarea>
+    <view class='emoji-box'>
+      <view class='button-emoji' bindtap="emojiShow">
+        <image src='{{imgSrc}}' class='icon icon-cute'></image>
+      </view>
+      <view class='wrapper'>
+       <view class='emoji-txt'>{{emojiTxt}}</view> 
+          <view class='inner' animation="{{animationData}}">
+            <view class='emoji-item' wx:for="{{imgArr}}" wx:key="item.name" data-emoji="{{item}}" catchtap='chooseEmoji'>
+              <image src='{{item.url}}' class='icon icon-emoji'></image>
+            </view>
+        </view>
+      </view>
+    </view>
   </view>
   <view class='button-box'>
     <view class='button-save'>
       <button type='primary' hover-class='none' catchtap='chooseEmoji'>save</button>
     </view>
-    <view class='button-emoji' bindtap="emojiShow">
-      <image src='../../sources/images/smile.png' class='icon icon-cute'></image>
-    </view>
+
   </view>
-  <view class='emoji-box' animation="{{animationData}}">
-    <view class='wrapper'>
-      <view class='emoji-item' wx:for="{{imgArr}}" wx:key="item.name">
-        <image src='{{item.url}}' class='icon icon-emoji'></image>
-      </view>
-    </view>
-  </view>
+
 </view>

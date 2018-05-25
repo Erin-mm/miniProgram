@@ -1,26 +1,14 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <view class='list'>
+    <view class='list-item' wx:for="{{listArr}}" wx:key="id" data-id="{{item.id}}" bindtap='gotoEdit'>
+      <text class='content'>{{item.content}}</text>
+      <text class='date'>{{item.date}}</text>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-  <view>
-    <view>{{ msg }}</view>
-    <button bindtap="clickMe">点击我</button>
-  </view>
-  <view>
-    <button bindtap="chooseImg">获取本地图片</button>
-  </view>
-  <view>
-  <button bindtap="goToStatistics">统计页</button>
-  </view>
-    <view>
-  <button bindtap="goToNotes">记录页</button>
+  <view class='tabar'>
+    <view class='tabbar-item' wx:for="{{iconArr}}" wx:key="item.name" data-page="{{item.page}}" bindtap="gotoPage">
+      <image class='icon' src='{{item.url}}'></image>
+    </view>
   </view>
 </view>

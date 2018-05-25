@@ -14,7 +14,9 @@ Page({
       { name: 'shocked', url: '../../sources/images/shocked.png' },
       { name: 'smile', url: '../../sources/images/smile.png' },
     ],
-    animationData: {}
+    animationData: {},
+    imgSrc:'../../sources/images/smile.png',
+    emojiTxt:'choose your mood'
   },
 
   /**
@@ -80,12 +82,25 @@ Page({
     })
 
     this.animation = animation
-    animation.translateY(0).opacity(1).step()
+    animation.translateX(0).opacity(1).scale(1).step()
     this.setData({
       animationData: animation.export()
     })
   },
-  chooseEmoji: function () {
-    console.log(222);
+  chooseEmoji: function (e) {
+    var animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'ease',
+    })
+
+    this.animation = animation
+    animation.translateX('50%').opacity(0).step()
+    animation.scale(0).step(0)
+    this.setData({
+      animationData: animation.export(),
+      imgSrc:e.currentTarget.dataset.emoji.url,
+      emojiTxt: e.currentTarget.dataset.emoji.name
+    })
+   
   }
 })
