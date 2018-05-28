@@ -7,6 +7,7 @@ Page({
   data: {
     date: [],
     weeks: [],
+    scrollTop: ''
   },
 
   /**
@@ -14,14 +15,13 @@ Page({
    */
   onLoad: function (options) {
     this.dateData(2017, 2019);
-
+    this.getFields();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
@@ -147,9 +147,25 @@ Page({
       date: dataAll2,
       weeks: weeks
     })
-    console.log(1111)
   },
   selectDay: function () {
 
+  },
+
+  getFields: function () {
+    var that = this
+    wx.createSelectorQuery().select('.bc').boundingClientRect(function (res) {
+     var scrollTop = res.top - (Math.floor((res.dataset.indexs + res.dataset.week) / 7) * 53 + 44 + 10 + 20);
+      that.data.scrollTop = scrollTop;
+      that.scrollTopa()
+    }).exec()
+  },
+  scrollTopa: function () {
+    var that = this
+    console.log(that.data)
+    wx.pageScrollTo({
+      scrollTop: that.data.scrollTop,
+      duration: 0
+    })
   },
 })
