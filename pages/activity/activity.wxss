@@ -1,14 +1,6 @@
 /* pages/activity/activity.wxss */
 
-.headdate {
-  height: 30px;
-  background-color: white;
-  flex: 1;
-  text-align: center;
-  line-height: 30px;
-}
-
-.headbox {
+.top-header{
   display: flex;
   position: fixed;
   width: 750rpx;
@@ -18,11 +10,19 @@
   z-index: 2;
 }
 
-.date-wrapper {
+.top-header .item {
+  height: 30px;
+  background-color: white;
+  flex: 1;
+  text-align: center;
+  line-height: 30px;
+}
+
+.wrapper {
   padding-top: 60rpx;
 }
 
-.mouthhead {
+.wrapper .header {
   height: 88rpx;
   background-color: #f4f4f4;
   width: 750rpx;
@@ -30,14 +30,14 @@
   text-align: center;
 }
 
-.daybox {
+.block {
   background-color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content:flex-start;
 }
 
-.day {
+.block .item {
   flex-basis: 107rpx;
   flex-grow: 0;
   flex-shrink: 0;
@@ -47,7 +47,7 @@
   line-height: 107rpx;
 }
 
-.bc {
+.current {
   background-color: #7cd8bd;
   color: white !important;
   border-radius: 50%;

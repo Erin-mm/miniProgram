@@ -1,19 +1,13 @@
 <!--pages/activity/activity.wxml-->
-<view class="headbox">
-  <view class="headdate">日</view>
-  <view class="headdate">一</view>
-  <view class="headdate">二</view>
-  <view class="headdate">三</view>
-  <view class="headdate">四</view>
-  <view class="headdate">五</view>
-  <view class="headdate">六</view>
+<view class="top-header">
+  <view class="item" wx:for="{{['日','一','二','三','四','五','六']}}" wx:key='index'>{{item}}</view>
 </view>
-<view class='date-wrapper'>
-  <view class="mouth" wx:for="{{date}}" wx:for-item="date" wx:for-index="index" wx:key='index'>
-    <view class="mouthhead">{{date[0].year}}年{{date[0].month}}月</view>
-    <view class="daybox">
-      <view class='day' wx:for="{{[0,1,2,3,4,5]}}" wx:for-index='iidex' wx:if="{{weeks[index]>iidex}}" wx:key="{{iidex}}"></view>
-      <view class="day {{item.selected == 1 ? 'bc':''}}" wx:for="{{date}}" wx:for-index="idx" data-index="{{index}}" data-indexs="{{idx}}" data-week="{{weeks[index]}}" bindtap="selectDay" wx:key="idx">
+<view class='wrapper'>
+  <view class="month" wx:for="{{date}}" wx:for-item="date" wx:for-index="index" wx:key='index'>
+    <view class="header">{{date[0].year}}年{{date[0].month}}月</view>
+    <view class="block">
+      <view class='item' wx:for="{{[0,1,2,3,4,5]}}" wx:for-index='iidex' wx:if="{{weeks[index]>iidex}}" wx:key="{{iidex}}"></view>
+      <view class="item {{item.selected == 1 ? 'current':''}}" wx:for="{{date}}" wx:for-index="idx" data-index="{{index}}" data-indexs="{{idx}}" data-week="{{weeks[index]}}" bindtap="selectDay" wx:key="idx">
         {{date[idx].day}}
       </view>
     </view>

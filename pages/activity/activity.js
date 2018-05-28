@@ -154,8 +154,8 @@ Page({
 
   getFields: function () {
     var that = this
-    wx.createSelectorQuery().select('.bc').boundingClientRect(function (res) {
-      var scrollTop = res.top - (Math.floor((res.dataset.indexs + res.dataset.week) / 7) * 53 + 44 + 26);
+    wx.createSelectorQuery().select('.current').boundingClientRect(function (res) {
+      var scrollTop = res.top - (Math.floor((res.dataset.indexs + res.dataset.week) / 7) * 53 + 44 + 27);
       that.data.scrollTop = scrollTop;
       that.scrollTop()
     }).exec()
