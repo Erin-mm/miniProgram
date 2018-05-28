@@ -1,13 +1,15 @@
 /* pages/activity/activity.wxss */
-.headdate{
+
+.headdate {
   height: 30px;
   background-color: white;
-  flex:1;
+  flex: 1;
   text-align: center;
   line-height: 30px;
 }
-.headbox{
-    display: flex;
+
+.headbox {
+  display: flex;
   position: fixed;
   width: 750rpx;
   display: -webkit-flex;
@@ -15,77 +17,38 @@
   background-color: white;
   z-index: 2;
 }
-.date-wrapper{
+
+.date-wrapper {
   padding-top: 60rpx;
 }
-.mouthhead{
+
+.mouthhead {
   height: 88rpx;
   background-color: #f4f4f4;
   width: 750rpx;
   line-height: 88rpx;
   text-align: center;
 }
-.mouth{
-   /* background-color: white; */
-  /* padding-top: 10rpx;
-  padding-bottom: 10rpx;  */
-}
-.daybox{
 
-    background-color: white; 
-   padding-top: 10rpx;
-   padding-bottom: 10rpx;   
-
+.daybox {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-start;
 }
-.day{
-  width: 107rpx;
-  height: 107rpx;
-  line-height: 107rpx;
+
+.day {
+  flex-basis: 107rpx;
+  flex-grow: 0;
+  flex-shrink: 0;
   text-align: center;
-  display: inline-block;
-  position: relative;
-  top: 0;
-  margin-top: -10rpx;
-  overflow: hidden;
   color: #353535;
   font-size: 34rpx;
-}
-.day2{
-  color: #04babe;
-  width: 107rpx;
-  height: 107rpx;
   line-height: 107rpx;
-  text-align: center;
-  display: inline-block;
-  position: relative;
-  bottom: 0;
-  margin-top: 0;
 }
-.actname{
-  color: #04babe;
-  position: absolute;
-  font-size: 20rpx;
-  top: -30rpx;
-  width: 107rpx;
-  text-align: center;
-}
-.actname2{
-  color: #04babe;
-  position: absolute;
-  font-size: 20rpx;
-  bottom: -30rpx;
-  width: 107rpx;
-  text-align: center;
-}
-.bc{
+
+.bc {
   background-color: #7cd8bd;
-  color: white!important;
+  color: white !important;
   border-radius: 50%;
-}
-.bc2{
-  color: white!important;
-}
-.none88{
-  height: 88rpx;
-  width: 750rpx;
 }
