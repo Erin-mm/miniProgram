@@ -4,11 +4,10 @@
 </view>
 <view class='wrapper'>
   <view class="month" wx:for="{{date}}" wx:for-item="date" wx:for-index="index" wx:key='index'>
-    <view class="header">{{date[0].year}}年{{date[0].month}}月</view>
+    <view class="header">{{date.year}}年{{date.month}}月</view>
     <view class="block">
-      <view class='item' wx:for="{{[0,1,2,3,4,5]}}" wx:for-index='iidex' wx:if="{{weeks[index]>iidex}}" wx:key="{{iidex}}"></view>
-      <view class="item {{item.selected == 1 ? 'current':''}}" wx:for="{{date}}" wx:for-index="idx" data-index="{{index}}" data-indexs="{{idx}}" data-week="{{weeks[index]}}" bindtap="selectDay" wx:key="idx">
-        {{date[idx].day}}
+      <view class="item {{ today === day.k && date.year === day.y && date.month === day.m ? 'current' : '' }}" wx:for="{{date.data}}" wx:for-item="day" wx:for-index="idx" wx:key="{{idx}}">
+        {{date.year == day.y && date.month == day.m ? day.d : ''}}
       </view>
     </view>
   </view>
